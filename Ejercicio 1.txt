@@ -1,0 +1,116 @@
+Ejercicio 1: 
+
+Algoritmo PromedioNotasAlumno
+	
+	Definir cantidadAlumnos, i Como Entero;
+	Definir nombreAlumno Como Cadena;
+	Definir nota, suma, promedio Como Real;
+	Escribir "Ingrese la cantidad de alumnos:";
+	Leer cantidadAlumnos;
+	
+	Para i <- 1 Hasta cantidadAlumnos Con Paso 1 Hacer 
+		Escribir "Ingrese el nombre del alumno ", i, ":";
+		Leer nombreAlumno;
+		suma <- 0;
+		
+		Para j <- 1 Hasta 3 con Paso 1 Hacer// Suponiendo 3 notas por alumno
+			Escribir "Ingrese la nota ", j, " del alumno ", i, ":";
+			Leer nota; 
+			suma <- suma + nota;
+		FinPara
+		
+		promedio <- suma / 3; //	Dividimos entre la cantidad de notas
+		Escribir "Nombre del alumno: ", nombreAlumno; 
+		Escribir "Promedio del alumno ", nombreAlumno, ": ", promedio;
+		Escribir ("--------------------------")	;
+	FinPara
+	
+FinAlgoritmo 
+
+Ejercicio 2: 
+
+Algoritmo LeerMatriz
+	
+	Definir filas, columnas, i, j Como Entero;
+	Definir matriz Como Entero;
+	Dimension matriz[10, 10];
+	Escribir "Ingrese el número de filas de la matriz:"; 
+	Leer filas;
+	Escribir("Ingrese el número de columnas de la matriz:"); 
+	Leer columnas;
+	
+	Para i <- 1 Hasta filas Con Paso 1 Hacer
+		Para j <- 1 Hasta columnas Con Paso 1 Hacer
+			Escribir "Ingrese el valor para la posición [", i, ",", j, "]:";
+			Leer matriz[i, j];
+		FinPara 
+	FinPara
+	
+	Escribir "La matriz ingresada es:";
+	
+	Para i <- 1 Hasta filas Con Paso 1 Hacer
+		Para j <- 1 Hasta columnas Con Paso 1 Hacer Escribir Sin Saltar matriz[i, j], " | ";
+		FinPara
+		Escribir "";
+	FinPara 
+	
+FinAlgoritmo
+
+Ejercicio 3:
+
+Algoritmo AlmacenarYMostrarMatriz 
+	
+	Definir tamano, i Como Entero; 
+	Definir matriz Como Entero; 
+	Dimension matriz[100];
+	Escribir "Ingrese el tamaño de la matriz:"; 
+	Leer tamano;
+	
+	Para i <- 1 Hasta tamano Con Paso 1 HACER
+		Escribir "Ingrese el valor para la posición ", i, ":";
+		Leer matriz[i];
+	FinPara
+	
+	Escribir "Los valores de la matriz son:";
+	
+	Para i <- 1 Hasta tamano Con Paso 1 HACER
+		Escribir Sin Saltar matriz[i], " | ";
+	FinPara
+	
+FinAlgoritmo
+
+Ejercicio 4:
+
+Algoritmo BuscarNombreEnMatriz
+	
+	Definir cantidadNombres, i, posicion Como Entero;
+	Definir nombres Como Cadena;
+	Dimension nombres[100];
+	Definir nombreBuscado Como Cadena; 
+	Escribir("Ingrese la cantidad de nombres:");
+	Leer cantidadNombres;
+	
+	Para i <- 1 Hasta cantidadNombres Con Paso 1 Hacer 
+		Escribir("Ingrese el nombre "), i, (":");
+		Leer nombres[i]; 
+    FinPara
+	
+	Escribir("Ingrese el nombre que desea buscar:");
+	Leer nombreBuscado;
+	posicion <- -1;
+	
+	Para i <- 1 Hasta cantidadNombres Con Paso 1 Hacer 
+		Si nombres[i] = nombreBuscado Entonces
+			posicion <- i;
+		SiNo
+			Escribir("Gracias por utilizar software amazónico.");
+		FinSi 
+	FinPara
+	
+	Si posicion = -1 Entonces
+		Escribir("El nombre no se encuentra en la matriz.");
+	Sino
+		Escribir("El nombre "), nombreBuscado, (" se encuentra en la posición "), posicion, (" de la matriz.");
+	FinSi 
+	
+FinAlgoritmo
